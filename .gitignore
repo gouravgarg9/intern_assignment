@@ -1,13 +1,9 @@
 # Frontend specific
 car-management-client/node_modules/
 car-management-client/.env
-car-management-client/dist/
-car-management-client/build/
-car-management-client/.next/
 
 # Backend specific
 challenge/node_modules/
 challenge/.env
-challenge/dist/
 
 .vscode/

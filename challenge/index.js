@@ -4,7 +4,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 const swaggerOptions = require('./swagger');
-
+const { SwaggerUIBundle, SwaggerUIStandalonePreset } = require('swagger-ui-dist')
 dotenv.config();
 const app = express();
 app.use(express.json());

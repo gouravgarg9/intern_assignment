@@ -1,4 +1,6 @@
 // Define Swagger options
+const { SwaggerUIBundle, SwaggerUIStandalonePreset } = require('swagger-ui-dist')
+
 module.exports = {
   definition: {
     openapi: '3.0.0',
