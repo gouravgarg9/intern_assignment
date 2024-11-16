@@ -17,9 +17,12 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.8.1",
+    "mongoose": "^8.5.2",
     "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7",
+    "swagger-autogen": "^2.23.7",
     "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-dist": "^5.18.2",
     "swagger-ui-express": "^5.0.1"
   }
 }
