@@ -118,7 +118,7 @@ const UpdateCar = () => {
               {existingImages.map((image, index) => (
                 <div key={index} className="relative">
                   <img
-                    src={`${API_URL}${image}`}
+                    src={`${image}`}
                     alt={`Existing Image ${index + 1}`}
                     className="object-cover h-10 w-10 mx-1"
                   />

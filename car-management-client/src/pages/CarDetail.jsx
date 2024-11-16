@@ -53,10 +53,10 @@ const CarDetail = () => {
           style={{ width: "100%" }}
         >
           <img
-            src={`${API_URL.split("/api")[0]}${image}`}
+            src={`${image}`}
             alt={`Car Image ${index + 1}`}
             className="w-full h-64 object-cover rounded-md cursor-pointer"
-            onClick={() => setFullscreenImage(`${API_URL.split("/api")[0]}${image}`)}
+            onClick={() => setFullscreenImage(`${image}`)}
           />
         </div>
       ))}
