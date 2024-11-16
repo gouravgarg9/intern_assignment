@@ -30,4 +30,4 @@ A brief description of your project. Highlight the primary goal or functionality
 ## Important-links
 ### Client: [https://intern-assignment-iota.vercel.app/](https://intern-assignment-iota.vercel.app/)
 ### API: [https://intern-assignment-api.vercel.app/](https://intern-assignment-api.vercel.app/)
-### Swagger API Docs: [https://intern-assignment-api.vercel.app/api/docs](https://intern-assignment-api.vercel.app/api/docs)
+### Swagger API Docs: [https://intern-assignment-api.vercel.app/api/docs/](https://intern-assignment-api.vercel.app/api/docs/)
