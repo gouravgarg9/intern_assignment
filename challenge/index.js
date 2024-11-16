@@ -8,11 +8,11 @@ const swaggerOptions = require('./swagger');
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(cors(
+app.use(cors({
     origin: 'https://intern-assignment-iota.vercel.app/',
     methods: ['POST','GET','PUT','DELETE','PATCH'],
     credentials: true
-));
+}));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // MongoDB Connection
