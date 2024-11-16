@@ -22,7 +22,7 @@ const Auth = () => {
     try {
       if (isSignup) {
         await signup({ username, password });
-        navigate('/auth');
+        setIsSignup(false);
       } else {
         const { data } = await login({ username, password });
         localStorage.setItem('token', data.token); // Store token in localStorage
