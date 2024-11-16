@@ -8,6 +8,7 @@ const swaggerOptions = require('./swagger');
 dotenv.config();
 const app = express();
 app.use(express.json());
+app.options('*', cors()); // Allow all CORS preflight requests
 app.use(cors({
     origin: 'https://intern-assignment-iota.vercel.app/',
     methods: ['POST','GET','PUT','DELETE','PATCH'],
