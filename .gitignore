@@ -8,7 +8,6 @@ car-management-client/.next/
 # Backend specific
 challenge/node_modules/
 challenge/.env
-challenge/uploads/
 challenge/dist/
 
 .vscode/
