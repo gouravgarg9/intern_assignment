@@ -1,7 +1,7 @@
-// Define Swagger options
-const { SwaggerUIBundle, SwaggerUIStandalonePreset } = require('swagger-ui-dist')
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
 
-module.exports = {
+const options = {
   definition: {
     openapi: '3.0.0',
     info: {
@@ -45,4 +45,8 @@ module.exports = {
   apis: ['./routes/*.js']  // Adjust path to your API files
 };
 
-
+const specs = swaggerJsdoc(options);
+module.exports = {
+  specs,
+  swaggerUi
+};

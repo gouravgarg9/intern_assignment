@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
-const swaggerOptions = require('./swagger');
-const { SwaggerUIBundle, SwaggerUIStandalonePreset } = require('swagger-ui-dist');
+const { specs, swaggerUi } = require('./swagger');
 dotenv.config();
 
 // MongoDB Connection
@@ -37,13 +36,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/cars', require('./routes/cars'));
 
-// Swagger Documentation
-const swaggerUi = require('swagger-ui-express');
-const swaggerJsdoc = require('swagger-jsdoc');
-
 // Swagger setup
-const swaggerSpec = swaggerJsdoc(swaggerOptions);
-app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+var options = {
+  customCssUrl: '/uploads/custom.css'
+};
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(specs, options));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
