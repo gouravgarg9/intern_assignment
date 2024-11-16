@@ -24,7 +24,7 @@ function App() {
       {isLoading && <Spinner />}
       <Router>
         <Routes>
-          <Route path="/" element={<CarList />} />
+          <Route path="/" element={<Auth />} />
           <Route path="/auth" element={<Auth />} />
 
           {/* Protect these routes */}
