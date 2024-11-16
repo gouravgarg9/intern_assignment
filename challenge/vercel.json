@@ -12,7 +12,6 @@
       "dest": "index.js"
     }
   ],
-  "build": {
-    "command": "npm install --force && npm run build"
+  "buildCommand": "npm install --force && npm run build"
   }
 }
