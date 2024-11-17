@@ -91,8 +91,10 @@ const upload = multer({
  *                 type: string
  *                 example: "A well-maintained car with low mileage"
  *               tags:
- *                 type: string
- *                 example: '["sedan", "toyota", "camry"]'
+ *                 type: array
+ *                 items:
+ *                  type: string
+ *                 example: ["sedan", "toyota", "camry"]
  *               images:
  *                 type: array
  *                 items:
@@ -115,12 +117,14 @@ router.post('/', auth, upload.array('images', 10), async (req, res) => {
 
         // Map the uploaded files to their S3 URLs
         const imageUrls = req.files.map(file => file.location);
-
+        let tags_parsed;
+        try{tags_parsed=JSON.parse(tags)}
+        catch{tags_parsed=[tags]}
         const car = new Car({
             userId,
             title,
             description,
-            tags: JSON.parse(tags),
+            tags: tags_parsed,
             images: imageUrls,
         });
 
@@ -163,7 +167,9 @@ router.post('/', auth, upload.array('images', 10), async (req, res) => {
  *                 type: string
  *                 example: "Updated description of the car."
  *               tags:
- *                 type: string
+ *                 type: array
+ *                 items:
+ *                  type: string
  *                 example: '["updated", "tags"]'
  *               images:
  *                 type: array
@@ -201,10 +207,14 @@ router.put('/:id', auth, upload.array('images', 10), async (req, res) => {
             return res.status(404).send('Car not found or you do not have permission to update it.');
         }
 
+        let tags_parsed;
+        try{tags_parsed=JSON.parse(tags)}
+        catch{tags_parsed=[tags]}
+
         // Update fields
         car.title = title;
         car.description = description;
-        car.tags = JSON.parse(tags);
+        car.tags = tags_parsed;
 
         // Handle existing images
         const imagesToKeep = JSON.parse(existingImages || '[]');
