@@ -36,6 +36,12 @@ const options = {
         }
       }
     },
+    servers: [
+      {
+        url: "https://intern-assignment-api.vercel.app",
+        description: "Car Managment API"
+      }
+    ],
     security: [
         {
           bearerAuth: [],

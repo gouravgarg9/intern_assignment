@@ -38,9 +38,13 @@ app.use('/api/cars', require('./routes/cars'));
 
 // Swagger setup
 var options = {
-  customCssUrl: '/uploads/custom.css'
+  customCssUrl: '/uploads/custom.css',
+  customJs: [
+    '/uploads/custom1.js', 
+    '/uploads/custom2.js',
+  ],
 };
-app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(specs, options));
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
