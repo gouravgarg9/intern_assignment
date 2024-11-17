@@ -26,6 +26,14 @@ const options = {
           properties: {
             message: { type: 'string', example: 'Car not found' }
           }
+        },
+        User: {
+          type: 'object',
+          required: ['username', 'password'],
+          properties: {
+            username: { type: 'string', example: 'john_doe' },
+            password: { type: 'string', example: 'securepassword123' }
+          }
         }
       },
       securitySchemes: {
@@ -39,16 +47,16 @@ const options = {
     servers: [
       {
         url: "https://intern-assignment-api.vercel.app",
-        description: "Car Managment API"
+        description: "Car Management API"
       }
     ],
     security: [
-        {
-          bearerAuth: [],
-        },
+      {
+        bearerAuth: [],
+      },
     ],
   },
-  apis: ['./routes/*.js']  // Adjust path to your API files
+  apis: ['./challenge/routes/*.js']
 };
 
 const specs = swaggerJsdoc(options);
