@@ -44,7 +44,7 @@ var options = {
     '/uploads/custom2.js',
   ],
 };
-app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(specs, options));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
